@@ -5,8 +5,6 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Button(
-    val background: String,
-    val height: Int,
     val text: String,
-    val width: Int
+    val action:Int
 ):Parcelable

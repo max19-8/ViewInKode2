@@ -9,9 +9,7 @@ import android.widget.ScrollView
 import androidx.fragment.app.Fragment
 
 class BaseFragment : Fragment() {
-    val container:View by lazy { ScrollView(App.appContext) }
-
-
+    var container:View = ScrollView(App.appContext)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -19,4 +17,9 @@ class BaseFragment : Fragment() {
     ): View {
         return this.container
     }
+
+    fun newLayout(view: View){
+        this.container = view
+    }
+
 }

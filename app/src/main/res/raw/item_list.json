@@ -30,6 +30,11 @@
       "width":380,
       "corner":20
     },
+    "buttonNext": {
+      "text": "next",
+      "action":1,
+      "background": "#FFBB86FC"
+    },
     "background": "#008000"
   },
   {
@@ -62,6 +67,16 @@
       "height":300,
       "width":380,
       "corner":20
+    },
+    "buttonNext": {
+      "text": "next",
+      "action":1,
+      "background": "#FFBB86FC"
+    },
+    "buttonPrevious": {
+      "text": "previous",
+      "action":-1,
+      "background": "#ADFF2F"
     },
     "background":"#CD5C5C"
   },
@@ -97,6 +112,16 @@
       "width":380,
       "corner":20
     },
+    "buttonNext": {
+      "text": "next",
+      "action":1,
+      "background": "#FFBB86FC"
+    },
+    "buttonPrevious": {
+      "text": "previous",
+      "action":-1,
+      "background": "#ADFF2F"
+    },
     "background":"#006400"
   },
   {
@@ -129,6 +154,11 @@
       "height":300,
       "width":380,
       "corner":20
+    },
+    "buttonPrevious": {
+      "text": "previous",
+      "action":-1,
+      "background": "#ADFF2F"
     },
     "background":"#B0C4DE"
   }

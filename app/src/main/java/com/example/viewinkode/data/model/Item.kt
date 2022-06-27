@@ -8,7 +8,7 @@ import kotlinx.parcelize.Parcelize
 data class Item(
     val id:Int,
     val background: String,
-    val button: Button,
+    val buttonNext: Button,
     val detailText: DetailText,
     val image: Image,
     val title: Title,
