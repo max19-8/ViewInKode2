@@ -74,7 +74,7 @@
       "background": "#FFBB86FC"
     },
     "buttonPrevious": {
-      "text": "previous",
+      "text": "back",
       "action":-1,
       "background": "#ADFF2F"
     },
@@ -118,7 +118,7 @@
       "background": "#FFBB86FC"
     },
     "buttonPrevious": {
-      "text": "previous",
+      "text": "back",
       "action":-1,
       "background": "#ADFF2F"
     },
@@ -156,7 +156,7 @@
       "corner":20
     },
     "buttonPrevious": {
-      "text": "previous",
+      "text": "back",
       "action":-1,
       "background": "#ADFF2F"
     },

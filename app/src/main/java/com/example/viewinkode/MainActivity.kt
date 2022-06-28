@@ -11,7 +11,6 @@ import com.google.android.material.snackbar.Snackbar
 class MainActivity : AppCompatActivity() {
 
     private lateinit var layout: List<Item>
-    private lateinit var obj: CreateNewScreen
     private var factory:Factory? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,36 +18,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         layout = CloudDataSource.Base(this.resources).getDataFromLocalJson()
 
-        val currentFragment = supportFragmentManager.findFragmentById(R.id.container)
-
          factory  = Factory(object : CreateNewScreen{
-            override fun createNewScreen() {
-                new()
+            override fun createNewScreen(id:Int) {
+                new(layout.first{
+                    it.id == id
+                })
             }
-
         })
-        new()
-
-
-
-
-
-
-
-//        val createNewScreen = object : CreateNewScreen{
-//            override fun createNewScreen() {
-//                supportFragmentManager.beginTransaction()
-//                    .replace(R.id.container, screen)
-//                    .commit()
-//            }
-//
-//        }
-
-
-
+        new(layout.first())
     }
-    fun new(){
-        val frag =  factory?.createScreen(this,layout.shuffled().first())
+  private  fun new(item: Item){
+        val frag =  factory?.newScreenCreate(this,item)
         supportFragmentManager.beginTransaction()
             .replace(R.id.container, frag!!)
             .commit()

@@ -16,6 +16,6 @@ class NewsListViewModel(application: Application):AndroidViewModel(application) 
     }
 
   private  fun getNews(){
-      _items.value = dataSource.getDataFromLocalJson()
+  //    _items.value = dataSource.getDataFromLocalJson()
     }
 }

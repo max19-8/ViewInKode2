@@ -12,7 +12,7 @@ import com.example.viewinkode.data.model.Item
 import com.example.viewinkode.newLayout.NextButton
 import com.example.viewinkode.newLayout.NewImageView
 import com.example.viewinkode.newLayout.NewTextView
-
+import com.example.viewinkode.newLayout.PreviousButton
 
 
 interface BaseLayout1{
@@ -80,17 +80,20 @@ abstract class CreateLayout:BaseLayout1{
     class BaseLayout(private val createNewScreen: CreateNewScreen):CreateLayout(){
        override fun createBaseLayout(context: Context, item: Item, container: ScrollView):ViewGroup{
           val res =   super.createBaseLayout(context, item, container)
-           val buttonPrevious = NextButton(createNewScreen).createButton(context,item)
-         //  val buttonNext = NextButton().createButton(context,item)
+           val buttonPrevious = PreviousButton(createNewScreen).createButton(context,item)
+           val buttonNext = NextButton(createNewScreen).createButton(context,item)
            res.addView(buttonPrevious)
-         //  res.addView(buttonNext)
+           res.addView(buttonNext)
            return res
         }
     }
     class NextLayout(private val createNewScreen: CreateNewScreen):CreateLayout(){
         override fun createBaseLayout(context: Context, item: Item, container: ScrollView):ViewGroup{
-            val res =   super.createBaseLayout(context, item, container)
-            val button = NextButton(createNewScreen).createButton(context,item)
+            val res =  super.createBaseLayout(context, item, container)
+            val button = if (item.id == 1)
+                NextButton(createNewScreen).createButton(context, item)
+            else
+                PreviousButton(createNewScreen).createButton(context, item)
             res.addView(button)
             return res
         }
