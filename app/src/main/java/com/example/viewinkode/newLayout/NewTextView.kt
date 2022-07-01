@@ -12,6 +12,8 @@ import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.view.setMargins
+import com.example.viewinkode.setLayoutParams
+import com.example.viewinkode.toDp
 
 class NewTextView {
      fun createTextView(text: String, context: Context, textSize: Float): TextView {
@@ -43,10 +45,4 @@ class NewTextView {
         textView.layoutParams = params
         return textView
     }
-    private fun setLayoutParams(param1: Int, param2: Int, context: Context) =
-        LinearLayout.LayoutParams(param1.toDp(context), param2.toDp(context))
-
-  private  fun Int.toDp(context: Context): Int = TypedValue.applyDimension(
-        TypedValue.COMPLEX_UNIT_DIP, this.toFloat(), context.resources.displayMetrics
-    ).toInt()
 }
